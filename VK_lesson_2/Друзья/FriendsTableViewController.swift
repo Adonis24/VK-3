@@ -11,7 +11,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     var names   = ["Брэдли Купер","Рассел Кроу","Леонардо ди Каприо"]
     var friends = ["Брэдли Купер":"Bredly","Рассел Кроу":"Russel","Леонардо ди Каприо":"Leonardo"]
-    
+    var friendsFoto = ["Bredly":"Брэдли Купер","Bredly_1":"Брэдли Купер","Russel":"Рассел Кроу","Russel_1":"Рассел Кроу","Leonardo":"Леонардо ди Каприо","Leonardo_1":"Леонардо ди Каприо"]
     
 
     
@@ -58,6 +58,26 @@ class FriendsTableViewController: UITableViewController {
         return cell
     }
  
+    //transfer fotos
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "allFotoFriend" {
+            let fotoFriendsController  = segue.destination as! FriendFotos
+            let myFriendsController = segue.source as! FriendsTableViewController
+            //  Получаем индекс выделенной ячейки
+            if let indexPath = myFriendsController.tableView.indexPathsForSelectedRows {
+                // Получаем друга по индексу
+                var allFotoOneFriend = [String]()
+                let friendName = myFriendsController.names[indexPath[0].row]
+                let result = friendsFoto.filter{(key,value) in value.contains(friendName) }
+                for elem in result {
+                  allFotoOneFriend.append(elem.key)
+                }
+               
+                    fotoFriendsController.allFotoOneFriend = allFotoOneFriend
+                
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

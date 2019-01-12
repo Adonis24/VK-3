@@ -8,13 +8,16 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+
 
 class FriendFotos: UIViewController {
-
+//var foto: [String] = []
+var allFotoOneFriend: [String] = []
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collectionView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +26,7 @@ class FriendFotos: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+}
 
     /*
     // MARK: - Navigation
@@ -36,11 +40,23 @@ class FriendFotos: UIViewController {
 
     // MARK: UICollectionViewDataSource
 
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
+extension FriendFotos: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allFotoOneFriend.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendFotos", for: indexPath) as! FriendFotoCell
+        let nameFoto = allFotoOneFriend[indexPath.row]
+        cell.friendFotos.image = UIImage(named: nameFoto)
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
 //
 //    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of items
@@ -54,7 +70,7 @@ class FriendFotos: UIViewController {
 //
 //        return cell
 //    }
-
+    }
     // MARK: UICollectionViewDelegate
 
     /*
@@ -86,4 +102,4 @@ class FriendFotos: UIViewController {
     }
     */
 
-}
+
