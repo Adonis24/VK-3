@@ -10,6 +10,8 @@ import UIKit
 
 class AllGroupsCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var allGroupName: UILabel!
+    @IBOutlet weak var allGroupLogo: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

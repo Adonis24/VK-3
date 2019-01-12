@@ -9,7 +9,9 @@
 import UIKit
 
 class AllGroupsTableViewController: UITableViewController {
-
+ var allGroups = ["Актеры","Композиторы","Автомобили","Спорт","Путешествие","Экстрим","Политика"]
+    var allGroupsFoto = ["Актеры":"Actors","Композиторы":"Composers","Автомобили":"Сars","Спорт":"Sport","Путешествие":"Travel","Экстрим":"Extrim","Политика":"Polit"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,23 +26,28 @@ class AllGroupsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allGroups.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupsCell", for: indexPath) as! AllGroupsCellTableViewCell
+        let name = allGroups[indexPath.row]
+        let result = allGroupsFoto.filter{(key,value) in key.contains(name) }
+        cell.allGroupLogo.image = UIImage(named: result.first?.value ?? "")
+        cell.allGroupName.text = result.first?.key
+        
+        
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

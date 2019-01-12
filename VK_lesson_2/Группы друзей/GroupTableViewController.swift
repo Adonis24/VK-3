@@ -10,8 +10,34 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
 
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        // Проверяем идентификатор, чтобы убедится, что это нужный переход
+        if segue.identifier == "addGroup" {
+            // Получаем ссылку на контроллер, с которого осуществлен переход
+            let allGroupsController = segue.source as! AllGroupsTableViewController
+            
+            // Получаем индекс выделенной ячейки
+            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
+                // Получаем группу по индексу
+                let group = allGroupsController.allGroups[indexPath.row] //allGroups[indexPath.row]
+                let groupFoto = allGroupsController.allGroupsFoto[group]
+                // Добавляем город в список выбранных городов
+                if !nameGroups.contains(group) {
+                    nameGroups.append(group)
+                    //myGroupsFoto.append(group)
+                    // Обновляем таблицу
+                    groups[group] = groupFoto
+                    tableView.reloadData()
+                }
+            }
+            
+        }
+        
+    }
     
-    
+    var nameGroups   = ["Актеры","Композиторы","Автомобили"]
+    var groups = ["Актеры":"Actors","Композиторы":"Composers","Автомобили":"Сars"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,23 +58,26 @@ class GroupTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return nameGroups.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as! GroupTableViewCell
+        let name = nameGroups[indexPath.row]
+        let result = groups.filter{(key,value) in key.contains(name) }
+        cell.groupLogo.image = UIImage(named: result.first?.value ?? "")
+        cell.groupName.text = result.first?.key
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
