@@ -9,7 +9,14 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
+    var names   = ["Брэдли Купер","Рассел Кроу","Леонардо ди Каприо"]
+    var friends = ["Брэдли Купер":"Bredly","Рассел Кроу":"Russel","Леонардо ди Каприо":"Leonardo"]
+    
+    
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,23 +36,28 @@ class FriendsTableViewController: UITableViewController {
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return names.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as! FriendsTableViewCell
+        let name = names[indexPath.row]
+        let result = friends.filter{(key,value) in key.contains(name) }
+        cell.friendLogo.image = UIImage(named: result.first?.value ?? "")
+        cell.friendName.text = result.first?.key
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
