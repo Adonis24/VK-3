@@ -308,9 +308,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.22287741650000001" green="0.34978891150000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" showsCancelButton="YES" id="w35-4k-UFa">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.22287741650000001" green="0.34978891150000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <color key="barTintColor" red="0.22287741650000001" green="0.34978891150000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Lvj-JD-nde" id="TjV-on-5Xz"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allGroupsCell" id="wvG-08-dqA" customClass="AllGroupsCellTableViewCell" customModule="VK_lesson_2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wvG-08-dqA" id="oQw-LZ-5AQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -344,6 +357,9 @@
                     <navigationItem key="navigationItem" title="Все группы" id="JWA-16-ce9">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="JVd-L3-O4F"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="w35-4k-UFa" id="1Da-ck-jjn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2D-Fk-9cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="toK-Hv-m6h" userLabel="Exit" sceneMemberID="exit"/>
