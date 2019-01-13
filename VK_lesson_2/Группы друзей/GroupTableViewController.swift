@@ -19,12 +19,12 @@ class GroupTableViewController: UITableViewController {
             // Получаем индекс выделенной ячейки
             if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
                 // Получаем группу по индексу
-                let group = allGroupsController.allGroups[indexPath.row] //allGroups[indexPath.row]
+                let group = allGroupsController.allGroups[indexPath.row] 
                 let groupFoto = allGroupsController.allGroupsFoto[group]
                 // Добавляем город в список выбранных городов
                 if !nameGroups.contains(group) {
                     nameGroups.append(group)
-                    //myGroupsFoto.append(group)
+                
                     // Обновляем таблицу
                     groups[group] = groupFoto
                     tableView.reloadData()
@@ -87,17 +87,20 @@ class GroupTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+             let name = nameGroups[indexPath.row]
+            nameGroups.remove(at: indexPath.row)
+            groups.removeValue(forKey: name)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.

@@ -332,6 +332,7 @@
                                 <connections>
                                     <outlet property="allGroupLogo" destination="8Tr-EA-SNZ" id="N1q-Gp-CHK"/>
                                     <outlet property="allGroupName" destination="Iq3-Kh-YUN" id="gPG-ca-LYY"/>
+                                    <segue destination="toK-Hv-m6h" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="j4t-tG-AHg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -345,6 +346,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2D-Fk-9cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="toK-Hv-m6h" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4952.8000000000002" y="22.938530734632685"/>
         </scene>
