@@ -101,6 +101,14 @@ class GroupTableViewController: UITableViewController {
         }    
     }
  
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+ 
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
     /*
     // Override to support rearranging the table view.

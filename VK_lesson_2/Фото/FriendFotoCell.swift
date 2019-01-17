@@ -8,6 +8,7 @@
 
 import UIKit
 
-class FiendFotoCell: UICollectionViewCell {
+class FriendFotoCell: UICollectionViewCell {
     
+    @IBOutlet weak var friendFotos: UIImageView!
 }
