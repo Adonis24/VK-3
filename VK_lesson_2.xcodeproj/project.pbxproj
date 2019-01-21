@@ -20,6 +20,8 @@
 		015CB38321EA139F00B32CBE /* FriendFotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CB38221EA139F00B32CBE /* FriendFotos.swift */; };
 		015CB38521EA13C000B32CBE /* FriendFotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CB38421EA13C000B32CBE /* FriendFotoCell.swift */; };
 		019B8A2E21E3C90F009B4F32 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B8A2D21E3C90F009B4F32 /* FriendsTableViewController.swift */; };
+		01D59DB321F3491D00417539 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D59DB221F3491D00417539 /* ShadowView.swift */; };
+		01EE84A821F47B6A009F6E6E /* ConteinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE84A721F47B6A009F6E6E /* ConteinerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		015CB38221EA139F00B32CBE /* FriendFotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFotos.swift; sourceTree = "<group>"; };
 		015CB38421EA13C000B32CBE /* FriendFotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFotoCell.swift; sourceTree = "<group>"; };
 		019B8A2D21E3C90F009B4F32 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		01D59DB221F3491D00417539 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		01EE84A721F47B6A009F6E6E /* ConteinerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteinerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			children = (
 				014AAC1021E3B1C50048FCBB /* GroupTableViewController.swift */,
 				015CB37F21EA12EB00B32CBE /* GroupTableViewCell.swift */,
+				01D59DB221F3491D00417539 /* ShadowView.swift */,
+				01EE84A721F47B6A009F6E6E /* ConteinerView.swift */,
 			);
 			name = "Группы друзей";
 			path = "Группы друзей";
@@ -193,8 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				015CB38321EA139F00B32CBE /* FriendFotos.swift in Sources */,
+				01D59DB321F3491D00417539 /* ShadowView.swift in Sources */,
 				0142442E21DCCD410055095C /* VKLoginController.swift in Sources */,
 				0142442C21DCCD410055095C /* AppDelegate.swift in Sources */,
+				01EE84A821F47B6A009F6E6E /* ConteinerView.swift in Sources */,
 				015CB37A21EA124100B32CBE /* AllGroupsTableViewController.swift in Sources */,
 				015CB38021EA12EB00B32CBE /* GroupTableViewCell.swift in Sources */,
 				015CB37E21EA12AD00B32CBE /* FriendsTableViewCell.swift in Sources */,

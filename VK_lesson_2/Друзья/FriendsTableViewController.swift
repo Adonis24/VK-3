@@ -43,6 +43,15 @@ class FriendsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return names.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,7 +60,6 @@ class FriendsTableViewController: UITableViewController {
         let result = friends.filter{(key,value) in key.contains(name) }
         cell.friendLogo.image = UIImage(named: result.first?.value ?? "")
         cell.friendName.text = result.first?.key
-        
 
         // Configure the cell...
 
