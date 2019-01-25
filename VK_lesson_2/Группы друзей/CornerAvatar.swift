@@ -6,41 +6,41 @@
 //  Copyright © 2019 Чернецов Роман. All rights reserved.
 //
 
-//import UIKit
-//
-//@IBDesignable class ConteinerView: UIView {
-//    
-//  
-//    private var containerLayer: CAShapeLayer!
-//    
-//    @IBInspectable var cornerRadius: CGFloat = 17 {
-//        didSet {
-//            setNeedsDisplay()
-//        }
-//    }
-//    @IBInspectable var borderColor: UIColor = UIColor.black {
-//        didSet {
-//        setNeedsDisplay()
-//        }
-//        }
-//    @IBInspectable var borderWidth: CGFloat = 2 {
-//        didSet {
-//        setNeedsDisplay()
-//        }
-//        }
-//    override func draw(_ rect: CGRect) {
-//        super.draw(rect)
-//
-//        if containerLayer == nil {
-//            containerLayer = CAShapeLayer()
-//            containerLayer.cornerRadius = cornerRadius
-//            containerLayer.borderColor = borderColor.cgColor
-//            containerLayer.borderWidth = borderWidth
-//            containerLayer.masksToBounds = true
-//
-//            layer.addSublayer(containerLayer)
-//        }
-//    }
-//}
+import UIKit
 
 
+ @IBDesignable class CornerAvatar: UIImageView{
+    private var cornerLayer: CAShapeLayer!
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.contentMode = .scaleAspectFit
+        self.clipsToBounds = true
+    }
+    
+
+    @IBInspectable var cornerRadius: CGFloat = 21 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+
+
+override func draw(_ rect: CGRect) {
+    super.draw(rect)
+    
+    if cornerLayer == nil {
+        cornerLayer = CAShapeLayer()
+        
+        cornerLayer.borderWidth = 2.0
+        cornerLayer.borderColor = UIColor.black.cgColor
+        cornerLayer.cornerRadius = cornerRadius//self.frame.size.width / 2
+        
+        cornerLayer.masksToBounds = true
+        
+        layer.addSublayer(cornerLayer)
+    }
+}
+}

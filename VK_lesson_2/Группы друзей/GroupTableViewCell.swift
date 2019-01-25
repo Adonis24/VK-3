@@ -10,12 +10,12 @@ import UIKit
 
 class GroupTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var groupLogo: UIImageView!{
-        didSet {
-            groupLogo.layer.borderColor = UIColor.white.cgColor
-            groupLogo.layer.borderWidth = 2
-        }
-    }
+    @IBOutlet weak var groupLogo: UIImageView!
+//        didSet {
+//            groupLogo.layer.borderColor = UIColor.white.cgColor
+//            groupLogo.layer.borderWidth = 2
+//        }
+//    }
     
     @IBOutlet weak var groupName: UILabel!
     
@@ -25,21 +25,21 @@ class GroupTableViewCell: UITableViewCell {
 //        groupName.text = nil
 //        groupLogo.image = nil
 //    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        groupLogo.clipsToBounds = true
-        groupLogo.layer.cornerRadius = groupLogo.frame.width/2
-        
-    }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        groupLogo.clipsToBounds = true
+//        groupLogo.layer.cornerRadius = groupLogo.frame.width/2
+//
+//    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
 
 }

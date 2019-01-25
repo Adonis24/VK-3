@@ -71,10 +71,23 @@ class GroupTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as! GroupTableViewCell
         let name = nameGroups[indexPath.row]
         let result = groups.filter{(key,value) in key.contains(name) }
-        cell.groupLogo.image = UIImage(named: result.first?.value ?? "")
+     
         cell.groupName.text = result.first?.key
+        cell.groupLogo.image = UIImage(named: result.first?.value ?? "")
         
-
+//        let border = UIView()
+//        border.frame = cell.groupLogo.bounds
+//        border.layer.cornerRadius = cell.groupLogo.bounds.height / 2
+//        border.layer.masksToBounds = true
+//        cell.groupLogo.addSubview(border)
+//     
+//        
+//        let newFriendAvatar = UIImageView()
+//        newFriendAvatar.image = UIImage(named: result.first?.value ?? "")
+//        
+//        newFriendAvatar.frame = border.bounds
+//        border.addSubview(newFriendAvatar)
+        
         return cell
     }
     
