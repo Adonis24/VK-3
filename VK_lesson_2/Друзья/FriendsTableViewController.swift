@@ -9,6 +9,8 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController,UISearchBarDelegate {
+   
+    
     var names   = ["Брэдли Купер","Рассел Кроу","Леонардо ди Каприо"]
     var friends = ["Брэдли Купер":"Bredly","Рассел Кроу":"Russel","Леонардо ди Каприо":"Leonardo"]
     var friendsFoto = ["Bredly":"Брэдли Купер","Bredly_1":"Брэдли Купер","Russel":"Рассел Кроу","Russel_1":"Рассел Кроу","Leonardo":"Леонардо ди Каприо","Leonardo_1":"Леонардо ди Каприо"]
